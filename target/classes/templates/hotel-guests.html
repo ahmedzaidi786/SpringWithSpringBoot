@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Guest list</title>
+</head>
+<body>
+<h1>Welcome to the guest Pages</h1>
+<table>
+    <tr>
+        <td>Last Name</td>
+        <td>First Name</td>
+        <td>Email Address</td>
+        <td>Phone Number</td>
+    </tr>
+    <tr th:each="guest: ${guests}">
+        <td th:text="${guest.lastName}!=null? ${guest.lastName} + ',' +
+      ${guest.firstName}:'VACANT'">Last Name</td>
+        <td th:text="${guest.firstName}">first Number</td>
+        <td th:text="${guest.emailAddress}">email address</td>
+        <td th:text="${guest.phoneNumber}">phone Number</td>
+    </tr>
+</table>
+</body>
+</html>
